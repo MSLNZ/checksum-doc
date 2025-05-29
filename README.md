@@ -1,1 +1,1 @@
-The file `index.md` is served up on github pages
+The file `index.md` in the `gh-pages` branch is served up on github pages
