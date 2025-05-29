@@ -1,4 +1,4 @@
-# Documentation ???
+# Documentation
 Requesting the status of one or more MD5 checksums will return a JSON object where the keys are the requested checksums and the corresponding value is one of: `valid`, `cancelled` or `unrecognised`.
 
 You can submit a request by either using a [query string](https://developer.mozilla.org/en-US/docs/Web/API/URL/search) or as a JSON array in the [body message](https://developer.mozilla.org/en-US/docs/Web/HTTP/Guides/Messages). For a query string, the service has an approximate 10,000 character limit for the length of the URL string. This limit corresponds to approximately 300 checksum values. Your web browser, or the application you use to generate the request URL, may have a smaller limit for the maximum number of characters it supports. The body message has essentially no limit to the number of checksums that can be sent in a single request.
