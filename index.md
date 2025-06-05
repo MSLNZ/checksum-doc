@@ -21,7 +21,7 @@ which may return the following response
 
 Alternatively, you could enter the URL in a web browser to view the response
 
-https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b
+[https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b](https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b)
 
 You can specify multiple checksums by separating each checksum value by a comma. For example, using [curl]
 
@@ -31,7 +31,7 @@ curl https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b
 
 or view the response in a web browser
 
-https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b,34c06fa135f07c95838fd18a9b6e273f,kiwi
+[https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b,34c06fa135f07c95838fd18a9b6e273f,kiwi](https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b,34c06fa135f07c95838fd18a9b6e273f,kiwi)
 
 ### Body Message
 
