@@ -8,7 +8,7 @@ You can submit a request by either using a [query string](https://developer.mozi
 To get the status of a checksum (e.g., `4123d4000116b9f48dd18a6313382d5b`) you could use the [curl] command-line tool to send the following request
 
 ```console
-curl https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b
+curl https://api.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b
 ```
 
 which may return the following response
@@ -21,17 +21,17 @@ which may return the following response
 
 Alternatively, you could enter the URL in a web browser to view the response
 
-[https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b](https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b)
+[https://api.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b](https://api.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b)
 
 You can specify multiple checksums by separating each checksum value by a comma. For example, using [curl]
 
 ```console
-curl https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b,34c06fa135f07c95838fd18a9b6e273f,kiwi
+curl https://api.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b,34c06fa135f07c95838fd18a9b6e273f,kiwi
 ```
 
 or view the response in a web browser
 
-[https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b,34c06fa135f07c95838fd18a9b6e273f,kiwi](https://kapua.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b,34c06fa135f07c95838fd18a9b6e273f,kiwi)
+[https://api.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b,34c06fa135f07c95838fd18a9b6e273f,kiwi](https://api.measurement.govt.nz/checksum?4123d4000116b9f48dd18a6313382d5b,34c06fa135f07c95838fd18a9b6e273f,kiwi)
 
 ### Body Message
 
@@ -40,7 +40,7 @@ You can either send a `POST` or a `GET` request to the server (these HTTP method
 The following example uses the [curl] command-line tool
 
 ```console
-curl -H 'Content-Type: application/json' -d '["4123d4000116b9f48dd18a6313382d5b","34c06fa135f07c95838fd18a9b6e273f"]' https://kapua.measurement.govt.nz/checksum
+curl -H 'Content-Type: application/json' -d '["4123d4000116b9f48dd18a6313382d5b","34c06fa135f07c95838fd18a9b6e273f"]' https://api.measurement.govt.nz/checksum
 ```
 
 which may return the following response
@@ -57,10 +57,10 @@ which may return the following response
 If you specify an invalid JSON array, such as the following _(note the extra trailing comma after the second checksum value)_,
 
 ```console
-curl -H 'Content-Type: application/json' -d '["4123d4000116b9f48dd18a6313382d5b","34c06fa135f07c95838fd18a9b6e273f",]' https://kapua.measurement.govt.nz/checksum
+curl -H 'Content-Type: application/json' -d '["4123d4000116b9f48dd18a6313382d5b","34c06fa135f07c95838fd18a9b6e273f",]' https://api.measurement.govt.nz/checksum
 ```
 
-a query string that has too many characters, or an invalid URL route, the [status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status) of the response will be one of the `4xx`-series status codes (instead of `200`) and the content of the response will be a JSON object with a `"message"` key that gives the reason why the request failed. For the previous invalid JSON-array request, the returned status code would be `400` and content of the response would be
+a query string that has too many characters, or an invalid URL route, the [status code](https://developer.mozilla.org/en-US/docs/Web/HTTP/Reference/Status) of the response will be one of the `4xx`-series status codes (instead of `200`) and the content of the response will be a JSON object with a `"message"` key that gives the reason why the request failed. For the previous invalid JSON-array request, the returned status code would be `400` and the content of the response would be
 
 ```console
 {"message": "Error! Invalid JSON object: '[\"4123d4000116b9f48dd18a6313382d5b\",\"34c06fa135f07c95838fd18a9b6e273f\",]'"}
