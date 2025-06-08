@@ -80,7 +80,7 @@ from urllib import request
 c = hashlib.md5(Path("UPDATE.me").read_bytes()).hexdigest()
 
 # Query the status of the checksum
-with request.urlopen(f"https://kapua.measurement.govt.nz/checksum?{c}") as r:
+with request.urlopen(f"https://api.measurement.govt.nz/checksum?{c}") as r:
     response = json.loads(r.read())
     print(response)
 ```
